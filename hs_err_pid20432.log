@@ -1,0 +1,225 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 266338304 bytes for G1 virtual space
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Zero Based Compressed Oops mode in which the Java heap is
+#     placed in the first 32GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 32GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_windows.cpp:3527), pid=20432, tid=15672
+#
+# JRE version:  (19.0.1+10) (build )
+# Java VM: OpenJDK 64-Bit Server VM (19.0.1+10-21, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Educational Edition 2022.2.2\lib\idea_rt.jar=54928:C:\Program Files\JetBrains\IntelliJ IDEA Educational Edition 2022.2.2\bin -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8 --module-path=C:\Users\joseph\.m2\repository\org\openjfx\javafx-controls\19-ea+7\javafx-controls-19-ea+7-win.jar;C:\Users\joseph\.m2\repository\org\openjfx\javafx-fxml\19-ea+7\javafx-fxml-19-ea+7-win.jar;C:\Users\joseph\.m2\repository\org\openjfx\javafx-graphics\19-ea+7\javafx-graphics-19-ea+7-win.jar;C:\Users\joseph\.m2\repository\org\openjfx\javafx-base\19-ea+7\javafx-base-19-ea+7-win.jar -Djdk.module.main=com.example.javafx com.example.javafx/com.example.javafx.HelloApplication
+
+Host: Intel(R) Core(TM) i7-10510U CPU @ 1.80GHz, 8 cores, 15G,  Windows 11 , 64 bit Build 22621 (10.0.22621.1194)
+Time: Fri Apr 21 10:13:58 2023 Paris, Madrid (heure duild 22621 (10.0.22621.1194) elapsed time: 0.013284 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00000228e91c2970):  JavaThread "Unknown thread" [_thread_in_vm, id=15672, stack(0x0000008620b00000,0x0000008620c00000)]
+
+Stack: [0x0000008620b00000,0x0000008620c00000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x6ee8fa]
+V  [jvm.dll+0x857a1e]
+V  [jvm.dll+0x85940e]
+V  [jvm.dll+0x859ac3]
+V  [jvm.dll+0x28291f]
+V  [jvm.dll+0x6eb6e9]
+V  [jvm.dll+0x6e028a]
+V  [jvm.dll+0x357136]
+V  [jvm.dll+0x35eb96]
+V  [jvm.dll+0x3b555e]
+V  [jvm.dll+0x3b578f]
+V  [jvm.dll+0x32c6ea]
+V  [jvm.dll+0x32d59e]
+V  [jvm.dll+0x821b20]
+V  [jvm.dll+0x3c27c1]
+V  [jvm.dll+0x8022f1]
+V  [jvm.dll+0x44b30f]
+V  [jvm.dll+0x44cc91]
+C  [jli.dll+0x5287]
+C  [ucrtbase.dll+0x29363]
+C  [KERNEL32.DLL+0x126bd]
+C  [ntdll.dll+0x5dfb8]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00007ffde278d048, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+
+Other Threads:
+  0x00000228e9231170 WorkerThread "GC Thread#0" [stack: 0x0000008620c00000,0x0000008620d00000] [id=32120]
+  0x00000228e923e1c0 ConcurrentGCThread "G1 Main Marker" [stack: 0x0000008620d00000,0x0000008620e00000] [id=17516]
+  0x00000228e923f690 WorkerThread "G1 Conc#0" [stack: 0x0000008620e00000,0x0000008620f00000] [id=6708]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffde1f4d127]
+
+VM state: not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x00000228e91be3d0] Heap_lock - owner thread: 0x00000228e91c2970
+
+Heap address: 0x0000000702a00000, size: 4054 MB, Compressed Oops mode: Zero based, Oop shift amount: 3
+
+CDS archive(s) mapped at: [0x0000000000000000-0x0000000000000000-0x0000000000000000), size 0, SharedBaseAddress: 0x0000000800000000, ArchiveRelocationMode: 0.
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0, Narrow klass range: 0x0
+
+GC Precious Log:
+ CardTable entry size: 512
+ Card Set container configuration: InlinePtr #cards 4 size 8 Array Of Cards #cards 16 size 48 Howl #buckets 8 coarsen threshold 3686 Howl Bitmap #cards 512 size 80 coarsen threshold 460 Card regions per heap region 1 cards per card region 4096
+
+Heap:
+ garbage-first heap   total 0K, used 0K [0x0000000702a00000, 0x0000000800000000)
+  region size 2048K, 0 young (0K), 0 survivors (0K)
+
+[error occurred during error reporting (printing heap information), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffde2356959]
+
+GC Heap History (0 events):
+No events
+
+Dll operation events (1 events):
+Event: 0.010 Loaded shared library C:\Users\joseph\.jdks\openjdk-19.0.1\bin\java.dll
+
+Deoptimization events (0 events):
+No events
+
+Classes loaded (0 events):
+No events
+
+Classes unloaded (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+VM Operations (0 events):
+No events
+
+Events (0 events):
+No events
+
+
+Dynamic libraries:
+0x00007ff600920000 - 0x00007ff60092e000 	C:\Users\joseph\.jdks\openjdk-19.0.1\bin\java.exe
+0x00007ffe7ca50000 - 0x00007ffe7cc64000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ffe7b940000 - 0x00007ffe7ba03000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007ffe7a490000 - 0x00007ffe7a82c000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007ffe79e90000 - 0x00007ffe79fa1000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ffe63d50000 - 0x00007ffe63d6b000 	C:\Users\joseph\.jdks\openjdk-19.0.1\bin\VCRUNTIME140.dll
+0x00007ffe63bf0000 - 0x00007ffe63c07000 	C:\Users\joseph\.jdks\openjdk-19.0.1\bin\jli.dll
+0x00007ffe7a8e0000 - 0x00007ffe7aa8d000 	C:\WINDOWS\System32\USER32.dll
+0x00007ffe7a830000 - 0x00007ffe7a856000 	C:\WINDOWS\System32\win32u.dll
+0x00007ffe68890000 - 0x00007ffe68b1e000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.22621.608_none_a9444ca7c10bb01d\COMCTL32.dll
+0x00007ffe7b6e0000 - 0x00007ffe7b709000 	C:\WINDOWS\System32\GDI32.dll
+0x00007ffe7b030000 - 0x00007ffe7b0d7000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007ffe7a0f0000 - 0x00007ffe7a202000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ffe7a3f0000 - 0x00007ffe7a48a000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ffe7b5f0000 - 0x00007ffe7b622000 	C:\WINDOWS\System32\IMM32.DLL
+0x00007ffe63db0000 - 0x00007ffe63dbc000 	C:\Users\joseph\.jdks\openjdk-19.0.1\bin\vcruntime140_1.dll
+0x00007ffe39830000 - 0x00007ffe398be000 	C:\Users\joseph\.jdks\openjdk-19.0.1\bin\msvcp140.dll
+0x00007ffde1c10000 - 0x00007ffde28d0000 	C:\Users\joseph\.jdks\openjdk-19.0.1\bin\server\jvm.dll
+0x00007ffe7c820000 - 0x00007ffe7c8ce000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007ffe7b630000 - 0x00007ffe7b6d4000 	C:\WINDOWS\System32\sechost.dll
+0x00007ffe7c440000 - 0x00007ffe7c555000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ffe57c90000 - 0x00007ffe57c99000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x00007ffe6f760000 - 0x00007ffe6f76a000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ffe7bb50000 - 0x00007ffe7bbc1000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ffe74b70000 - 0x00007ffe74ba4000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ffe78fd0000 - 0x00007ffe78fe8000 	C:\WINDOWS\SYSTEM32\kernel.appcore.dll
+0x00007ffe63d10000 - 0x00007ffe63d1a000 	C:\Users\joseph\.jdks\openjdk-19.0.1\bin\jimage.dll
+0x00007ffe77890000 - 0x00007ffe77abe000 	C:\WINDOWS\SYSTEM32\DBGHELP.DLL
+0x00007ffe7b0e0000 - 0x00007ffe7b46a000 	C:\WINDOWS\System32\combase.dll
+0x00007ffe7c8d0000 - 0x00007ffe7c9a7000 	C:\WINDOWS\System32\OLEAUT32.dll
+0x00007ffe5a040000 - 0x00007ffe5a072000 	C:\WINDOWS\SYSTEM32\dbgcore.DLL
+0x00007ffe7a070000 - 0x00007ffe7a0eb000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007ffe5a390000 - 0x00007ffe5a39e000 	C:\Users\joseph\.jdks\openjdk-19.0.1\bin\instrument.dll
+0x00007ffe637e0000 - 0x00007ffe63806000 	C:\Users\joseph\.jdks\openjdk-19.0.1\bin\java.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Users\joseph\.jdks\openjdk-19.0.1\bin;C:\WINDOWS\SYSTEM32;C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.22621.608_none_a9444ca7c10bb01d;C:\Users\joseph\.jdks\openjdk-19.0.1\bin\server
+
+VM Arguments:
+jvm_args: -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Educational Edition 2022.2.2\lib\idea_rt.jar=54928:C:\Program Files\JetBrains\IntelliJ IDEA Educational Edition 2022.2.2\bin -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8 --module-path=C:\Users\joseph\.m2\repository\org\openjfx\javafx-controls\19-ea+7\javafx-controls-19-ea+7-win.jar;C:\Users\joseph\.m2\repository\org\openjfx\javafx-fxml\19-ea+7\javafx-fxml-19-ea+7-win.jar;C:\Users\joseph\.m2\repository\org\openjfx\javafx-graphics\19-ea+7\javafx-graphics-19-ea+7-win.jar;C:\Users\joseph\.m2\repository\org\openjfx\javafx-base\19-ea+7\javafx-base-19-ea+7-win.jar -Djdk.module.main=com.example.javafx 
+java_command: com.example.javafx/com.example.javafx.HelloApplication
+java_class_path (initial): C:\Users\joseph\.m2\repository\org\openjfx\javafx-controls\19-ea+7\javafx-controls-19-ea+7.jar;C:\Users\joseph\.m2\repository\org\openjfx\javafx-graphics\19-ea+7\javafx-graphics-19-ea+7.jar;C:\Users\joseph\.m2\repository\org\openjfx\javafx-base\19-ea+7\javafx-base-19-ea+7.jar;C:\Users\joseph\.m2\repository\org\openjfx\javafx-fxml\19-ea+7\javafx-fxml-19-ea+7.jar
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 4                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 2                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 8                                         {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 2097152                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 266338304                                 {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 4250927104                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 2097152                                   {product} {ergonomic}
+   size_t MinHeapSize                              = 8388608                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 5839372                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122909434                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 122909434                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+   size_t SoftMaxHeapSize                          = 4250927104                             {manageable} {ergonomic}
+     bool UseCompressedClassPointers               = true                           {product lp64_product} {ergonomic}
+     bool UseCompressedOops                        = true                           {product lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags foldmultilines=false
+ #1: stderr all=off uptime,level,tags foldmultilines=false
+
+Environment Variables:
+PATH=C:\Python27\Lib\site-packages\PyQt4;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Python27;C:\Python27\DLLs;C:\Python27\Scripts;C:\Python27\gnuplot\binary;C:\Program Files (x86)\pythonxy\SciTE-3.5.1-4;C:\Program Files (x86)\pythonxy\console;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\Git\cmd;C:\Program Files\MATLAB\R2023a\bin;C:\Users\joseph\AppData\Local\Microsoft\WindowsApps;C:\Users\joseph\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\joseph\AppData\Local\JetBrains\Toolbox\scripts;;%USERPROFILE%\AppData\Local\Microsoft\WindowsApps
+USERNAME=joseph
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 142 Stepping 12, GenuineIntel
+TMP=C:\Users\joseph\AppData\Local\Temp
+TEMP=C:\Users\joseph\AppData\Local\Temp
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS:
+ Windows 11 , 64 bit Build 22621 (10.0.22621.1194)
+OS uptime: 36 days 20:45 hours
+
+CPU: total 8 (initial active 8) (4 cores per cpu, 2 threads per core) family 6 model 142 stepping 12 microcode 0xde, cx8, cmov, fxsr, ht, mmx, 3dnowpref, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, lzcnt, tsc, tscinvbit, avx, avx2, aes, erms, clmul, bmi1, bmi2, adx, fma, vzeroupper, clflush, clflushopt, rdtscp
+
+Memory: 4k page, system-wide physical 16212M (2484M free)
+TotalPageFile size 31572M (AvailPageFile size 199M)
+current process WorkingSet (physical memory assigned to process): 11M, peak: 11M
+current process commit charge ("private bytes"): 60M, peak: 314M
+
+vm_info: OpenJDK 64-Bit Server VM (19.0.1+10-21) for windows-amd64 JRE (19.0.1+10-21), built on 2022-09-14T12:45:06Z by "mach5one" with MS VC++ 17.1 (VS2022)
+
+END.
