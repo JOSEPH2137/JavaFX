@@ -37,15 +37,15 @@ public class Level0 {
 
     }
     public void finish (ActionEvent e) {
-
-        String text = startVue.inputField.getText();
-        player.playerName=text;
-        VueLevel1 newVue = new VueLevel1();
-        Level1 newController = new Level1(newVue,player);
-        Scene newScene = new Scene(newVue, 500, 500);
-        Stage currentStage = (Stage) ((Node) e.getSource()).getScene().getWindow();
-
-        currentStage.setScene(newScene);
+        if (player.house!=0&&player.wand.sizeWand!=0&&player.pet!=0){
+            String text = startVue.inputField.getText();
+            player.playerName = text;
+            VueLevel1 newVue = new VueLevel1();
+            Level1 newController = new Level1(newVue, player);
+            Scene newScene = new Scene(newVue, 800, 600);
+            Stage currentStage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+            currentStage.setScene(newScene);
+        }
 
     }
 
@@ -59,16 +59,16 @@ public class Level0 {
         Random random = new Random();
         int house = random.nextInt(4 - 0) + 1;
         if (house == 1) {
-            startVue.house.setText("Your house is Griffondor");
+            startVue.houseText.setText("Your house is Griffondor");
             player.house=house;
         } else if (house == 2) {
-            startVue.house.setText("Your house is Serpentard");
+            startVue.houseText.setText("Your house is Serpentard");
             player.house=house;
         } else if (house == 3) {
-            startVue.house.setText("Your house is Serpentard");
+            startVue.houseText.setText("Your house is Serdaigle");
             player.house=house;
         } else {
-            startVue.house.setText("Your house is Poustouffle");
+            startVue.houseText.setText("Your house is Poustouffle");
             player.house=house;
         }
     }
@@ -78,15 +78,15 @@ public class Level0 {
         int coreWand = random.nextInt(3 - 0) + 1;
         int sizeWand = random.nextInt(12 - 0) + 20;
         if (coreWand == 1) {
-            startVue.wand.setText("You have a wand with an unicorn hair! It measures "+sizeWand + " cm");
+            startVue.wandText.setText("You have a wand with an unicorn hair! It measures "+sizeWand + " cm");
             wand.sizeWand=sizeWand;
             wand.coreWand=coreWand;
         } else if (coreWand == 2) {
-            startVue.wand.setText("You have a wand with a phoenix feather! It measures "+sizeWand + " cm");
+            startVue.wandText.setText("You have a wand with a phoenix feather! It measures "+sizeWand + " cm");
             wand.sizeWand=sizeWand;
             wand.coreWand=coreWand;
         } else {
-            startVue.wand.setText("You have a wand with a dragon ventricle! It measures "+sizeWand + " cm");
+            startVue.wandText.setText("You have a wand with a dragon ventricle! It measures "+sizeWand + " cm");
             wand.sizeWand=sizeWand;
             wand.coreWand=coreWand;
         }

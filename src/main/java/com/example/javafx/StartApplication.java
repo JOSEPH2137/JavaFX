@@ -15,7 +15,7 @@ public class StartApplication extends Application {
     public void start(Stage stage) throws IOException {
         VueLevel0 startVue = new VueLevel0();
         Level0 startController = new Level0(startVue);
-        Scene scene = new Scene(startVue, 500, 500);
+        Scene scene = new Scene(startVue, 800, 600);
         stage.setScene(scene);
         stage.setTitle("Hello!");
         stage.setScene(scene);
