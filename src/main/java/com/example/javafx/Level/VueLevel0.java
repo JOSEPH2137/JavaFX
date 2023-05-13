@@ -26,6 +26,8 @@ public class VueLevel0 extends VBox {
     Button pet4 = new Button("Howl");
     Label petText = new Label("Your animal is a");
 
+    Label instruction = new Label("Bonjour, Voici quelques éléments pour que votre aventure se déroule pour le mieux :\n- Lorsque vous envoyez un sort il faut d'abord entrer le numéro correspondant au sort. \nPour cela vous avez une zone de texte sous le bouton -cast a spell-. \n par exemple pour lancer le sort Wingardium leviosa, vous devrez d'abord écrir 1 dans la zone de texte \n puis appuyer sur le bouton Wingardium Leviosa.\n -pour commencer un niveau, il faut appuyer sur le gros bouton en haut \n -Pour passer au niveau suivant, il faut appuyer sur le petit bouton next en bas");
+
 
 
 
@@ -47,6 +49,8 @@ public class VueLevel0 extends VBox {
         pet4.getStyleClass().add("btn");
         petText.getStyleClass().add("label");
         petText.setTextFill(Color.WHITE);
+        instruction.getStyleClass().add("label");
+        instruction.setTextFill(Color.WHITE);
 
 
 
@@ -58,7 +62,7 @@ public class VueLevel0 extends VBox {
         gridPane.setVgap(10);
         gridPane.setPadding(new Insets(10));
 
-        Image backgroundImage = new Image("file:C:/Users/joseph/IdeaProjects/JavaFX/src/main/resources/thumb-1920-84314.jpg");
+        Image backgroundImage = new Image(getClass().getResource("/thumb-1920-84314.jpg").toString());
         Rectangle background = new Rectangle(5, 5, 800, 600);
         background.setFill(new ImagePattern(backgroundImage));
         StackPane stackPane = new StackPane(background, gridPane);
@@ -77,6 +81,7 @@ public class VueLevel0 extends VBox {
         gridPane.add(pet4, 4, 4);
         gridPane.add(petText, 0, 5, 3, 1);
         gridPane.add(finishButton, 3, 6, 3, 1);
+        gridPane.add(instruction, 0, 8, 8, 5);
 
         this.getChildren().add(stackPane);
     }

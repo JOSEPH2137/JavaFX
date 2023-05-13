@@ -25,7 +25,7 @@ public class Level0 {
         int pv = 100;
         List<Spell> knownSpell = new ArrayList();
         List<Potion> knownPotion = new ArrayList();
-        player = new Player(pv,"", wand, 0, 0,knownSpell,knownPotion);
+        player = new Player(pv,"", wand, 0, 0,knownSpell,knownPotion,1);
 
         startVue.finishButton.setOnAction(this::finish);
         startVue.findHouse.setOnAction(this::House );

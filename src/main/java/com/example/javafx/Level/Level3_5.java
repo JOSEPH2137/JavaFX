@@ -12,24 +12,23 @@ import com.example.javafx.general.Vueloose;
 import javafx.event.ActionEvent;
 import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 import java.util.Random;
 
-public class Level1 {
-    private VueLevel1 startVue;
+public class Level3_5 {
+    private VueLevel3_5 startVue;
     private Player player;
     private boolean play;
 
-    private Boss troll;
+
+    private Boss detractor;
 
 
 
-
-    public Level1(VueLevel1 startVue, Player player) {
+    public Level3_5(VueLevel3_5 startVue, Player player) {
         this.startVue = startVue;
         this.player= player;
         startVue.beginButton.setOnAction(this::begin);
@@ -37,29 +36,9 @@ public class Level1 {
         startVue.escapeButton.setOnAction(this::escape);
         startVue.fightButton.setOnAction(this::fight);
         startVue.next.setOnAction(this::next);
-
         boolean play=false;
-
-        Boss troll = new Boss( 100, 20);
-        this.troll=troll;
-        Spell wingardiumLeviosa = new Spell(75,40,"1");
-        Potion lifePotion= new Potion(1);
-        if (player.knownSpell.size()<1) {
-            player.knownSpell.add(wingardiumLeviosa);
-        }
-        if (player.knownPotion.size()<1) {
-            player.knownPotion.add(lifePotion);
-        }
-
-        if (player.house==3){
-            wingardiumLeviosa.precision=wingardiumLeviosa.precision+20;
-        }
-        else if (player.house==2){
-            wingardiumLeviosa.attack=wingardiumLeviosa.attack+10;
-        }
-        else if (player.house==1){
-            troll.attack=troll.attack-5;
-        }
+        Boss detractor = new Boss( 100, 20);
+        this.detractor=detractor;
 
     }
 
@@ -70,48 +49,55 @@ public class Level1 {
         play=true;
         ((Pane) startVue.beginButton.getParent()).getChildren().remove(startVue.beginButton);
         startVue.playerpv.setText("Your pv : "+player.pv);
-        startVue.trollpv.setText("Troll pv : "+troll.pv);
+        startVue.trollpv.setText("Detractor pv : "+detractor.pv);
     }
 
-    public void spell (ActionEvent e){
-        if(play==true){
+    public void spell (ActionEvent e) {
+        if (play == true) {
             Random random = new Random();
             boolean findSpell = false;
             String text = startVue.spellNumber.getText();
             for (Spell spell : player.knownSpell) {
                 if (spell.number.equals(text)) {
                     findSpell = true;
-                    int attack = spell.attack;
-                    int precision = spell.precision;
-                    int pres = random.nextInt(100 - 1) + 1;
-                    if (pres < precision) {
-                        troll.pv = troll.pv - attack;
-                        startVue.message.setText("You touched the troll");
+                    if ("1".equals(text)) {
+                        player.pv = player.pv - detractor.attack;
+                        startVue.message.setText("This spell is useless");
+                    } else if ("2".equals(text)) {
+                        player.pv = player.pv - detractor.attack;
+                        startVue.message.setText("This spell is useless");
                     } else {
-                        player.pv = player.pv - troll.attack;
-                        startVue.message.setText("You missed the troll");
+                        int attack = spell.attack;
+                        int precision = spell.precision;
+                        int pres = random.nextInt(100 - 1) + 1;
+                        if (pres < precision) {
+                            detractor.pv = detractor.pv - attack;
+                            startVue.message.setText("You touched the detractor");
+                        } else {
+                            player.pv = player.pv - detractor.attack;
+                            startVue.message.setText("You missed the detractor");
+                        }
+
                     }
                 }
             }
             if (findSpell == false) {
-                player.pv = player.pv - troll.attack;
-                startVue.message.setText("You don't know this spell");
+                player.pv = player.pv - detractor.attack;
+                startVue.message.setText("You don't know the spell");
             }
             if (player.pv<1){
-               player.pv=0;
+                player.pv=0;
             }
-            if (troll.pv<1){
-                troll.pv=0;
+            if (detractor.pv<1){
+                detractor.pv=0;
             }
-            startVue.playerpv.setText("Your pv : "+player.pv);
-            startVue.trollpv.setText("Troll pv : "+troll.pv);
-            if (player.pv<1){
+            startVue.playerpv.setText("Your pv : " + player.pv);
+            startVue.trollpv.setText("Detractor pv : " + detractor.pv);
+            if (player.pv < 1) {
                 startVue.spell.setDisable(true);
                 startVue.fightButton.setDisable(true);
                 startVue.escapeButton.setDisable(true);
-
-            }
-            else if(troll.pv<1) {
+            } else if (detractor.pv < 1) {
                 startVue.spell.setDisable(true);
                 startVue.fightButton.setDisable(true);
                 startVue.escapeButton.setDisable(true);
@@ -119,12 +105,13 @@ public class Level1 {
 
         }
     }
+
     public void escape (ActionEvent e){
         if(play==true){
             player.pv = 0;
             startVue.playerpv.setText("Your pv : "+player.pv);
-            startVue.trollpv.setText("Troll pv : "+troll.pv);
-            startVue.message.setText("You fell down and the troll decapitated you.");
+            startVue.trollpv.setText("Detractor pv : "+detractor.pv);
+            startVue.message.setText("the detractor killed you");
             if (player.pv<1){
                 startVue.spell.setDisable(true);
                 startVue.fightButton.setDisable(true);
@@ -134,14 +121,10 @@ public class Level1 {
     }
     public void fight (ActionEvent e){
         if(play==true){
-            player.pv = player.pv - 50;
-            troll.pv = troll.pv + 1;
-            if (player.pv<1){
-                player.pv=0;
-            }
+            player.pv = 0;
             startVue.playerpv.setText("Your pv : "+player.pv);
-            startVue.trollpv.setText("Troll pv : "+troll.pv);
-            startVue.message.setText("The troll heat you");
+            startVue.trollpv.setText("Detractor pv : "+detractor.pv);
+            startVue.message.setText("the detractor killed you");
             if (player.pv<1){
                 startVue.spell.setDisable(true);
                 startVue.fightButton.setDisable(true);
@@ -149,16 +132,15 @@ public class Level1 {
             }
         }
     }
-    public void next (ActionEvent e){
-        if (player.pv<1){
+    public void next (ActionEvent e) {
+        if (player.pv < 1) {
             Vueloose newVue = new Vueloose();
             Loose newController = new Loose(newVue, player);
             Scene newScene = new Scene(newVue, 800, 600);
             Stage currentStage = (Stage) ((Node) e.getSource()).getScene().getWindow();
             currentStage.setScene(newScene);
-        }
-        else if(troll.pv<1) {
-            player.level=2;
+        } else if (detractor.pv < 1) {
+            player.level = 4;
             VueMakePotion newVue = new VueMakePotion();
             MakePotion newController = new MakePotion(newVue, player);
             Scene newScene = new Scene(newVue, 800, 600);
@@ -167,7 +149,4 @@ public class Level1 {
         }
 
     }
-
-
-
 }
