@@ -59,7 +59,7 @@ public class Level2 {
         play=true;
         ((Pane) startVue.beginButton.getParent()).getChildren().remove(startVue.beginButton);
         startVue.playerpv.setText("Tes pv : "+player.pv);
-        startVue.trollpv.setText("Troll pv : "+basilic.pv);
+        startVue.basilicpv.setText("Basilic pv : "+basilic.pv);
     }
 
     public void spell (ActionEvent e){
@@ -96,7 +96,7 @@ public class Level2 {
                 player.pv=0;
             }
             startVue.playerpv.setText("Tes pv : "+player.pv);
-            startVue.trollpv.setText("Basilic pv : "+basilic.pv);
+            startVue.basilicpv.setText("Basilic pv : "+basilic.pv);
             if (player.pv<1){
                 startVue.spell.setDisable(true);
                 startVue.fightButton.setDisable(true);
@@ -119,7 +119,7 @@ public class Level2 {
                 startVue.fightButton.setDisable(true);
                 startVue.waitButton.setDisable(true);
                 basilic.pv=0;
-                startVue.trollpv.setText("Basilic pv : "+basilic.pv);
+                startVue.basilicpv.setText("Basilic pv : "+basilic.pv);
 
         }
 
@@ -129,7 +129,7 @@ public class Level2 {
         if(play==true){
             player.pv = 0;
             startVue.playerpv.setText("Tes pv : "+player.pv);
-            startVue.trollpv.setText("Basilic pv : "+basilic.pv);
+            startVue.basilicpv.setText("Basilic pv : "+basilic.pv);
             startVue.message.setText("Le basilik te tue");
             if (player.pv<1){
                 startVue.spell.setDisable(true);

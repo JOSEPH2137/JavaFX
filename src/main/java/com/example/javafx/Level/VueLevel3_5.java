@@ -18,12 +18,11 @@ public class VueLevel3_5 extends VBox {
     Button spell = new Button("lancer le sort");
     TextField spellNumber = new TextField("entre le numéro du sort");
     Button escapeButton = new Button("échappe toi");
-    Button fightButton = new Button("negocie avec le détraqueur");
+    Button negociateButton = new Button("negocie avec le détraqueur");
 
 
-    Label textetest = new Label("");
     Label playerpv = new Label("Tes pv");
-    Label trollpv = new Label("Detraqueur pv");
+    Label detraqueurpv = new Label("Detraqueur pv");
     Button next = new Button("next");
     Label message = new Label("");
 
@@ -41,12 +40,11 @@ public class VueLevel3_5 extends VBox {
         spell.getStyleClass().add("btn");
         spellNumber.getStyleClass().add("textfield");
         escapeButton.getStyleClass().add("btn");
-        fightButton.getStyleClass().add("btn");
-        textetest.getStyleClass().add("label");
+        negociateButton.getStyleClass().add("btn");
         playerpv.getStyleClass().add("label");
         playerpv.setTextFill(Color.WHITE);
-        trollpv.getStyleClass().add("label");
-        trollpv.setTextFill(Color.WHITE);
+        detraqueurpv.getStyleClass().add("label");
+        detraqueurpv.setTextFill(Color.WHITE);
         next.getStyleClass().add("btn");
         message.getStyleClass().add("label");
         message.setTextFill(Color.RED);
@@ -68,10 +66,9 @@ public class VueLevel3_5 extends VBox {
         gridPane.add(spell, 0, 10);
         gridPane.add(spellNumber, 0, 11);
         gridPane.add(escapeButton, 1, 3);
-        gridPane.add(fightButton, 10, 8);
-        gridPane.add(textetest, 5, 3);
+        gridPane.add(negociateButton, 10, 8);
         gridPane.add(playerpv, 0, 20);
-        gridPane.add(trollpv, 15, 20);
+        gridPane.add(detraqueurpv, 15, 20);
         gridPane.add(next, 8, 22);
         gridPane.add(message, 8, 10);
 

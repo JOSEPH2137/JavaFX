@@ -171,7 +171,10 @@ public class Level3 {
 
         }
         Spell expectoPatronum = new Spell(80, attack, "3");
-        player.knownSpell.add(expectoPatronum);
+        if (player.knownSpell.size()<3) {
+            player.knownSpell.add(expectoPatronum);
+        }
+
         if (player.house == 3) {
             expectoPatronum.precision = expectoPatronum.precision + 10;
         } else if (player.house == 2) {

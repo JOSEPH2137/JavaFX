@@ -34,7 +34,7 @@ public class Level3_5 {
         startVue.beginButton.setOnAction(this::begin);
         startVue.spell.setOnAction(this::spell);
         startVue.escapeButton.setOnAction(this::escape);
-        startVue.fightButton.setOnAction(this::fight);
+        startVue.negociateButton.setOnAction(this::fight);
         startVue.next.setOnAction(this::next);
         boolean play=false;
         Boss detractor = new Boss( 100, 20);
@@ -49,7 +49,7 @@ public class Level3_5 {
         play=true;
         ((Pane) startVue.beginButton.getParent()).getChildren().remove(startVue.beginButton);
         startVue.playerpv.setText("Tes pv : "+player.pv);
-        startVue.trollpv.setText("Detraqueur pv : "+detractor.pv);
+        startVue.detraqueurpv.setText("Detraqueur pv : "+detractor.pv);
     }
 
     public void spell (ActionEvent e) {
@@ -92,14 +92,14 @@ public class Level3_5 {
                 detractor.pv=0;
             }
             startVue.playerpv.setText("Tes pv : " + player.pv);
-            startVue.trollpv.setText("Detraqueur pv : " + detractor.pv);
+            startVue.detraqueurpv.setText("Detraqueur pv : " + detractor.pv);
             if (player.pv < 1) {
                 startVue.spell.setDisable(true);
-                startVue.fightButton.setDisable(true);
+                startVue.negociateButton.setDisable(true);
                 startVue.escapeButton.setDisable(true);
             } else if (detractor.pv < 1) {
                 startVue.spell.setDisable(true);
-                startVue.fightButton.setDisable(true);
+                startVue.negociateButton.setDisable(true);
                 startVue.escapeButton.setDisable(true);
             }
 
@@ -110,11 +110,11 @@ public class Level3_5 {
         if(play==true){
             player.pv = 0;
             startVue.playerpv.setText("Tes pv : "+player.pv);
-            startVue.trollpv.setText("Detraqueur pv : "+detractor.pv);
+            startVue.detraqueurpv.setText("Detraqueur pv : "+detractor.pv);
             startVue.message.setText("Le detraqueur t'a tué");
             if (player.pv<1){
                 startVue.spell.setDisable(true);
-                startVue.fightButton.setDisable(true);
+                startVue.negociateButton.setDisable(true);
                 startVue.escapeButton.setDisable(true);
             }
         }
@@ -123,11 +123,11 @@ public class Level3_5 {
         if(play==true){
             player.pv = 0;
             startVue.playerpv.setText("Tes pv : "+player.pv);
-            startVue.trollpv.setText("Detractor pv : "+detractor.pv);
+            startVue.detraqueurpv.setText("Detractor pv : "+detractor.pv);
             startVue.message.setText("Le detraqueur t'a tué");
             if (player.pv<1){
                 startVue.spell.setDisable(true);
-                startVue.fightButton.setDisable(true);
+                startVue.negociateButton.setDisable(true);
                 startVue.escapeButton.setDisable(true);
             }
         }

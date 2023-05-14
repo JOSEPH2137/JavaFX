@@ -24,7 +24,7 @@ public class VueLevel2 extends VBox{
 
     Label textetest = new Label("");
     Label playerpv = new Label("Tes pv");
-    Label trollpv = new Label("Basilic pv");
+    Label basilicpv = new Label("Basilic pv");
     Button next = new Button("next");
     Label message = new Label("");
 
@@ -46,8 +46,8 @@ public class VueLevel2 extends VBox{
         textetest.getStyleClass().add("label");
         playerpv.getStyleClass().add("label");
         playerpv.setTextFill(Color.WHITE);
-        trollpv.getStyleClass().add("label");
-        trollpv.setTextFill(Color.WHITE);
+        basilicpv.getStyleClass().add("label");
+        basilicpv.setTextFill(Color.WHITE);
         next.getStyleClass().add("btn");
         message.getStyleClass().add("label");
         message.setTextFill(Color.RED);
@@ -71,7 +71,7 @@ public class VueLevel2 extends VBox{
         gridPane.add(fightButton, 10, 8);
         gridPane.add(textetest, 5, 3);
         gridPane.add(playerpv, 0, 20);
-        gridPane.add(trollpv, 15, 20);
+        gridPane.add(basilicpv, 15, 20);
         gridPane.add(next, 8, 22);
         gridPane.add(message, 6, 10,5,3);
 

@@ -16,7 +16,6 @@ import java.util.Random;
 
 public class Level0 {
     private VueLevel0 startVue;
-    private Stage stage;
     public Player player;
     private Wand wand;
     public Level0(VueLevel0 startVue){
