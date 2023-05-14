@@ -15,15 +15,15 @@ import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
 
 public class VueLevel2 extends VBox{
-    Button beginButton = new Button("begin level 2. \n You have learn a new spell : \n accio. \n It is the number 2.");
-    Button spell = new Button("cast the spell");
-    TextField spellNumber = new TextField("enter the spell's number");
-    Button waitButton = new Button("wait some seconds");
-    Button fightButton = new Button("fight with your hands");
+    Button beginButton = new Button("Commencer le level 2. \n Tu as appris un nouveau sort : \n accio. \n C'est le nombre 2.");
+    Button spell = new Button("lancer le sort");
+    TextField spellNumber = new TextField("entre le numéro de sort");
+    Button waitButton = new Button("attendre quelques secondes");
+    Button fightButton = new Button("se battre à main nue");
 
 
     Label textetest = new Label("");
-    Label playerpv = new Label("player pv");
+    Label playerpv = new Label("Tes pv");
     Label trollpv = new Label("Basilic pv");
     Button next = new Button("next");
     Label message = new Label("");

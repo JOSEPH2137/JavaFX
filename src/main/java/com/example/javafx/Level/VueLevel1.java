@@ -14,15 +14,15 @@ import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
 
 public class VueLevel1 extends VBox {
-    Button beginButton = new Button("begin level 1. \n You have learn a new spell : \n Wingardium Leviosa. \n It is the number 1.");
-    Button spell = new Button("cast the spell");
-    TextField spellNumber = new TextField("enter the spell's number");
-    Button escapeButton = new Button("escape you");
-    Button fightButton = new Button("fight with your hands");
+    Button beginButton = new Button("Commencer level 1. \n Tu as appris un nouveau sort : \n Wingardium Leviosa. \n C'est le nombre 1.");
+    Button spell = new Button("lancer le sort");
+    TextField spellNumber = new TextField("entre le numéro du sort");
+    Button escapeButton = new Button("échappe toi");
+    Button fightButton = new Button("se battre à main nue");
 
 
     Label textetest = new Label("");
-    Label playerpv = new Label("player pv");
+    Label playerpv = new Label("Tes pv");
     Label trollpv = new Label("Troll pv");
     Button next = new Button("next");
     Label message = new Label("");

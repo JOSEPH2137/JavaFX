@@ -15,11 +15,11 @@ import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
 
 public class VueLevel4 extends VBox {
-    Button beginButton = new Button("begin level 4");
-    Button spell = new Button("cast the spell");
-    TextField spellNumber = new TextField("enter the spell's number");
-    Button escapeButton = new Button("escape you");
-    Button negociateButton = new Button("negociate with voldemort");
+    Button beginButton = new Button("Commencer le level 4. \nTu es face à Voldemort");
+    Button spell = new Button("lancer le sort");
+    TextField spellNumber = new TextField("entre le numéro du sort");
+    Button escapeButton = new Button("échappe toi");
+    Button negociateButton = new Button("negocie avec Voldemort");
     Button next = new Button("next");
     Label message = new Label("");
 

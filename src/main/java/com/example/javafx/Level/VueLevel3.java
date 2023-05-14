@@ -14,7 +14,7 @@ import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
 
 public class VueLevel3 extends VBox {
-    Button beginButton = new Button("begin level 3. \n You must learn a new spell : \n Expecto Patronum. \n It is the number 3.");
+    Button beginButton = new Button("Commencer le level 3. \n Tu dois apprendre un nouveau sort : \n Expecto Patronum. \n C'est le nombre 3.");
     Label textetest = new Label("Appuye sur tout les boutons pour montrer ta dextérité");
 
     Button one=new Button ("");

@@ -13,18 +13,18 @@ import javafx.scene.paint.Color;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
 public class VueLevel0 extends VBox {
-    Label welcomeText = new Label("Welcome to wizards world");
-    Button finishButton = new Button("finish");
-    TextField inputField = new TextField("enter your name");
-    Button findWand = new Button("find your wand");
+    Label welcomeText = new Label("Bienvenue dans le monde des sorciers");
+    Button finishButton = new Button("next");
+    TextField inputField = new TextField("entre ton nom");
+    Button findWand = new Button("trouve ta baguette");
     Label wandText = new Label("");
-    Button findHouse = new Button("find your house");
-    Label houseText = new Label("Your house is ");
-    Button pet1 = new Button("Cat");
-    Button pet2 = new Button("Toad");
+    Button findHouse = new Button("trouve ta maison");
+    Label houseText = new Label("Ta maison est ");
+    Button pet1 = new Button("Chat");
+    Button pet2 = new Button("Crapaud");
     Button pet3 = new Button("Rat");
-    Button pet4 = new Button("Howl");
-    Label petText = new Label("Your animal is a");
+    Button pet4 = new Button("Chouette");
+    Label petText = new Label("Ton animal est un");
 
     Label instruction = new Label("Bonjour, Voici quelques éléments pour que votre aventure se déroule pour le mieux :\n- Lorsque vous envoyez un sort il faut d'abord entrer le numéro correspondant au sort. \nPour cela vous avez une zone de texte sous le bouton -cast a spell-. \n par exemple pour lancer le sort Wingardium leviosa, vous devrez d'abord écrir 1 dans la zone de texte \n puis appuyer sur le bouton Wingardium Leviosa.\n -pour commencer un niveau, il faut appuyer sur le gros bouton en haut \n -Pour passer au niveau suivant, il faut appuyer sur le petit bouton next en bas");
 

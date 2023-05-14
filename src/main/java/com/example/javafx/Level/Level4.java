@@ -56,29 +56,29 @@ public class Level4 {
                     if (spell.number.equals(text)) {
                         findSpell = true;
                         if ("1".equals(text)) {
-                            startVue.message.setText("This spell is useless, Voldemort killed you");
+                            startVue.message.setText("Ce sort est inutile, Voldemort t'a tué");
                             player.pv = 0;
                             startVue.spell.setDisable(true);
                             startVue.negociateButton.setDisable(true);
                             startVue.escapeButton.setDisable(true);
                         } else if ("3".equals(text)) {
-                            startVue.message.setText("This spell is useless, Voldemort killed you");
+                            startVue.message.setText("Ce sort est inutile, Voldemort t'a tué");
                             player.pv = 0;
                             startVue.spell.setDisable(true);
                             startVue.negociateButton.setDisable(true);
                             startVue.escapeButton.setDisable(true);
                         } else {
-                            int precision = spell.precision;
+                            int precision = spell.precision+30;
                             int pres = random.nextInt(100 - 1) + 1;
                             if (pres < precision) {
-                                startVue.message.setText("You touched the portauloin and you escape.");
+                                startVue.message.setText("tu attrapes le portauloin, et t'échappes.");
                                 voldemort.pv = 0;
                                 startVue.spell.setDisable(true);
                                 startVue.negociateButton.setDisable(true);
                                 startVue.escapeButton.setDisable(true);
                             } else {
 
-                                startVue.message.setText("You missed the spell and voldemort killed you.");
+                                startVue.message.setText("Tu rates le sort et Voldemort te tue");
                                 player.pv = 0;
                                 startVue.spell.setDisable(true);
                                 startVue.negociateButton.setDisable(true);
@@ -89,7 +89,7 @@ public class Level4 {
                     }
                 }
                 if (findSpell == false) {
-                    startVue.message.setText("Voldemort killed you, you don't know the spell");
+                    startVue.message.setText("Voldemort te tue car tu ne connais pas ce sort");
                     player.pv = 0;
                     startVue.spell.setDisable(true);
                     startVue.negociateButton.setDisable(true);
@@ -98,7 +98,7 @@ public class Level4 {
             }
             else{
                 player.pv = 0;
-                startVue.message.setText("Voldemort killed you before you cast the spell");
+                startVue.message.setText("Voldemort te tue avant que tu lances le sort");
                 startVue.spell.setDisable(true);
                 startVue.negociateButton.setDisable(true);
                 startVue.escapeButton.setDisable(true);
@@ -112,14 +112,14 @@ public class Level4 {
                 startVue.spell.setDisable(true);
                 startVue.negociateButton.setDisable(true);
                 startVue.escapeButton.setDisable(true);
-                startVue.message.setText("Voldemort killed you.");
+                startVue.message.setText("Voldemort te tue.");
             }
             else{
                 player.pv = 0;
                 startVue.spell.setDisable(true);
                 startVue.negociateButton.setDisable(true);
                 startVue.escapeButton.setDisable(true);
-                startVue.message.setText("Voldemort killed you while you are running.");
+                startVue.message.setText("Voldemort te tue pendant que tu cours.");
 
             }
         }
@@ -127,8 +127,8 @@ public class Level4 {
     public void escape (ActionEvent e){
         if(play==true) {
             if (direction==false) {
-                startVue.escapeButton.setText("escape to the right");
-                startVue.negociateButton.setText("escape to the left");
+                startVue.escapeButton.setText("s'échapper à droite");
+                startVue.negociateButton.setText("s'échapper à gauche");
                 direction=true;
             }
             else if(runportauloin==true){
@@ -136,13 +136,13 @@ public class Level4 {
                 startVue.spell.setDisable(true);
                 startVue.negociateButton.setDisable(true);
                 startVue.escapeButton.setDisable(true);
-                startVue.message.setText("Voldemort killed you while you are running.");
+                startVue.message.setText("Voldemort te tue pendant que tu cours.");
 
             }
             else{
                 castspell=true;
-                startVue.message.setText("you see the portauloin at five meters.");
-                startVue.escapeButton.setText("run to the portauloin");
+                startVue.message.setText("Tu vois le portauloin à cinq mètres.");
+                startVue.escapeButton.setText("courir vers le portauloin");
                 runportauloin=true;
                 startVue.negociateButton.setDisable(true);
             }

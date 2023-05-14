@@ -48,8 +48,8 @@ public class Level3_5 {
     public void begin (ActionEvent e){
         play=true;
         ((Pane) startVue.beginButton.getParent()).getChildren().remove(startVue.beginButton);
-        startVue.playerpv.setText("Your pv : "+player.pv);
-        startVue.trollpv.setText("Detractor pv : "+detractor.pv);
+        startVue.playerpv.setText("Tes pv : "+player.pv);
+        startVue.trollpv.setText("Detraqueur pv : "+detractor.pv);
     }
 
     public void spell (ActionEvent e) {
@@ -62,20 +62,20 @@ public class Level3_5 {
                     findSpell = true;
                     if ("1".equals(text)) {
                         player.pv = player.pv - detractor.attack;
-                        startVue.message.setText("This spell is useless");
+                        startVue.message.setText("Ce sort est inutile");
                     } else if ("2".equals(text)) {
                         player.pv = player.pv - detractor.attack;
-                        startVue.message.setText("This spell is useless");
+                        startVue.message.setText("Ce sort est inutile");
                     } else {
                         int attack = spell.attack;
                         int precision = spell.precision;
                         int pres = random.nextInt(100 - 1) + 1;
                         if (pres < precision) {
                             detractor.pv = detractor.pv - attack;
-                            startVue.message.setText("You touched the detractor");
+                            startVue.message.setText("Tu as touché le detraqueur");
                         } else {
                             player.pv = player.pv - detractor.attack;
-                            startVue.message.setText("You missed the detractor");
+                            startVue.message.setText("Tu as raté le détraqueur");
                         }
 
                     }
@@ -83,7 +83,7 @@ public class Level3_5 {
             }
             if (findSpell == false) {
                 player.pv = player.pv - detractor.attack;
-                startVue.message.setText("You don't know the spell");
+                startVue.message.setText("Tu ne connais pas ce sort");
             }
             if (player.pv<1){
                 player.pv=0;
@@ -91,8 +91,8 @@ public class Level3_5 {
             if (detractor.pv<1){
                 detractor.pv=0;
             }
-            startVue.playerpv.setText("Your pv : " + player.pv);
-            startVue.trollpv.setText("Detractor pv : " + detractor.pv);
+            startVue.playerpv.setText("Tes pv : " + player.pv);
+            startVue.trollpv.setText("Detraqueur pv : " + detractor.pv);
             if (player.pv < 1) {
                 startVue.spell.setDisable(true);
                 startVue.fightButton.setDisable(true);
@@ -109,9 +109,9 @@ public class Level3_5 {
     public void escape (ActionEvent e){
         if(play==true){
             player.pv = 0;
-            startVue.playerpv.setText("Your pv : "+player.pv);
-            startVue.trollpv.setText("Detractor pv : "+detractor.pv);
-            startVue.message.setText("the detractor killed you");
+            startVue.playerpv.setText("Tes pv : "+player.pv);
+            startVue.trollpv.setText("Detraqueur pv : "+detractor.pv);
+            startVue.message.setText("Le detraqueur t'a tué");
             if (player.pv<1){
                 startVue.spell.setDisable(true);
                 startVue.fightButton.setDisable(true);
@@ -122,9 +122,9 @@ public class Level3_5 {
     public void fight (ActionEvent e){
         if(play==true){
             player.pv = 0;
-            startVue.playerpv.setText("Your pv : "+player.pv);
+            startVue.playerpv.setText("Tes pv : "+player.pv);
             startVue.trollpv.setText("Detractor pv : "+detractor.pv);
-            startVue.message.setText("the detractor killed you");
+            startVue.message.setText("Le detraqueur t'a tué");
             if (player.pv<1){
                 startVue.spell.setDisable(true);
                 startVue.fightButton.setDisable(true);

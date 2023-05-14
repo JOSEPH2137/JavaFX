@@ -153,21 +153,21 @@ public class Level3 {
         if (time < 7000) {
 
             attack = 100;
-            startVue.textetest.setText("Your patronum is an unicorn. You time was :"+time/1000+" secondes");
+            startVue.textetest.setText("ton patronum est une licorne. tu as pris :"+time/1000+" secondes");
 
         } else if (time < 10000) {
 
             attack = 80;
-            startVue.textetest.setText("Your patronum is a deer. You time was :"+time/1000+" secondes");
+            startVue.textetest.setText("Ton patronum est un cerf. Tu as pris :"+time/1000+" secondes");
 
         } else if (time < 15000) {
 
             attack = 60;
-            startVue.textetest.setText("Your patronum is an colt). You time was :"+time/1000+" secondes");
+            startVue.textetest.setText("Ton patronum est un poulain. Tu as pris :"+time/1000+" secondes");
 
         } else {
             attack = 50;
-            startVue.textetest.setText("Your patronum is a nutria. You time was :"+time/1000+" secondes");
+            startVue.textetest.setText("Ton patronum est un ragondin. Tu as pris :"+time/1000+" secondes");
 
         }
         Spell expectoPatronum = new Spell(80, attack, "3");

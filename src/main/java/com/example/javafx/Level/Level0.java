@@ -59,16 +59,16 @@ public class Level0 {
         Random random = new Random();
         int house = random.nextInt(4 - 0) + 1;
         if (house == 1) {
-            startVue.houseText.setText("Your house is Griffondor");
+            startVue.houseText.setText("Ta maison est Griffondor");
             player.house=house;
         } else if (house == 2) {
-            startVue.houseText.setText("Your house is Serpentard");
+            startVue.houseText.setText("Ta maison est Serpentard");
             player.house=house;
         } else if (house == 3) {
-            startVue.houseText.setText("Your house is Serdaigle");
+            startVue.houseText.setText("Ta maison est Serdaigle");
             player.house=house;
         } else {
-            startVue.houseText.setText("Your house is Poustouffle");
+            startVue.houseText.setText("Ta maison est Poustouffle");
             player.house=house;
         }
     }
@@ -78,15 +78,15 @@ public class Level0 {
         int coreWand = random.nextInt(3 - 0) + 1;
         int sizeWand = random.nextInt(12 - 0) + 20;
         if (coreWand == 1) {
-            startVue.wandText.setText("You have a wand with an unicorn hair! It measures "+sizeWand + " cm");
+            startVue.wandText.setText("Tu as une baguette à crin de licorne! Elle mesure "+sizeWand + " cm");
             wand.sizeWand=sizeWand;
             wand.coreWand=coreWand;
         } else if (coreWand == 2) {
-            startVue.wandText.setText("You have a wand with a phoenix feather! It measures "+sizeWand + " cm");
+            startVue.wandText.setText("Tu as une baguette à plume de phoenix! Elle mesure "+sizeWand + " cm");
             wand.sizeWand=sizeWand;
             wand.coreWand=coreWand;
         } else {
-            startVue.wandText.setText("You have a wand with a dragon ventricle! It measures "+sizeWand + " cm");
+            startVue.wandText.setText("Tu as une baguette à ventricule de dragon! Elle mesure "+sizeWand + " cm");
             wand.sizeWand=sizeWand;
             wand.coreWand=coreWand;
         }
@@ -96,19 +96,19 @@ public class Level0 {
     }
     public void pet1 (ActionEvent e){
         player.pet=1;
-        startVue.petText.setText("Your animal is a cat");
+        startVue.petText.setText("Ton animal est un chat");
     }
     public void pet2 (ActionEvent e){
         player.pet=2;
-        startVue.petText.setText("Your animal is a toad");
+        startVue.petText.setText("Ton animal est un crapaud");
     }
     public void pet3 (ActionEvent e){
         player.pet=3;
-        startVue.petText.setText("Your animal is a rat");
+        startVue.petText.setText("Ton animal est un rat");
     }
     public void pet4 (ActionEvent e){
         player.pet=4;
-        startVue.petText.setText("Your animal is a howl");
+        startVue.petText.setText("Ton animal est une chouette");
     }
 
 

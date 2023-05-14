@@ -69,7 +69,7 @@ public class Level1 {
     public void begin (ActionEvent e){
         play=true;
         ((Pane) startVue.beginButton.getParent()).getChildren().remove(startVue.beginButton);
-        startVue.playerpv.setText("Your pv : "+player.pv);
+        startVue.playerpv.setText("Tes pv : "+player.pv);
         startVue.trollpv.setText("Troll pv : "+troll.pv);
     }
 
@@ -86,16 +86,16 @@ public class Level1 {
                     int pres = random.nextInt(100 - 1) + 1;
                     if (pres < precision) {
                         troll.pv = troll.pv - attack;
-                        startVue.message.setText("You touched the troll");
+                        startVue.message.setText("Tu as touché le troll");
                     } else {
                         player.pv = player.pv - troll.attack;
-                        startVue.message.setText("You missed the troll");
+                        startVue.message.setText("Tu as raté le troll");
                     }
                 }
             }
             if (findSpell == false) {
                 player.pv = player.pv - troll.attack;
-                startVue.message.setText("You don't know this spell");
+                startVue.message.setText("Tu ne connais pas ce sort");
             }
             if (player.pv<1){
                player.pv=0;
@@ -103,7 +103,7 @@ public class Level1 {
             if (troll.pv<1){
                 troll.pv=0;
             }
-            startVue.playerpv.setText("Your pv : "+player.pv);
+            startVue.playerpv.setText("Tes pv : "+player.pv);
             startVue.trollpv.setText("Troll pv : "+troll.pv);
             if (player.pv<1){
                 startVue.spell.setDisable(true);
@@ -122,9 +122,9 @@ public class Level1 {
     public void escape (ActionEvent e){
         if(play==true){
             player.pv = 0;
-            startVue.playerpv.setText("Your pv : "+player.pv);
+            startVue.playerpv.setText("Tes pv : "+player.pv);
             startVue.trollpv.setText("Troll pv : "+troll.pv);
-            startVue.message.setText("You fell down and the troll decapitated you.");
+            startVue.message.setText("Tu tombes et le troll te décapite.");
             if (player.pv<1){
                 startVue.spell.setDisable(true);
                 startVue.fightButton.setDisable(true);
@@ -139,9 +139,9 @@ public class Level1 {
             if (player.pv<1){
                 player.pv=0;
             }
-            startVue.playerpv.setText("Your pv : "+player.pv);
+            startVue.playerpv.setText("Tes pv : "+player.pv);
             startVue.trollpv.setText("Troll pv : "+troll.pv);
-            startVue.message.setText("The troll heat you");
+            startVue.message.setText("Le troll te frappe");
             if (player.pv<1){
                 startVue.spell.setDisable(true);
                 startVue.fightButton.setDisable(true);

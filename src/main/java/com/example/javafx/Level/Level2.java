@@ -58,7 +58,7 @@ public class Level2 {
     public void begin (ActionEvent e){
         play=true;
         ((Pane) startVue.beginButton.getParent()).getChildren().remove(startVue.beginButton);
-        startVue.playerpv.setText("Your pv : "+player.pv);
+        startVue.playerpv.setText("Tes pv : "+player.pv);
         startVue.trollpv.setText("Troll pv : "+basilic.pv);
     }
 
@@ -72,7 +72,7 @@ public class Level2 {
                     findSpell = true;
                     if ("1".equals(text)){
                         player.pv = player.pv - basilic.attack;
-                        startVue.message.setText("This spell is useless");
+                        startVue.message.setText("Ce sort est inutile");
                     }
                     else {
                         int attack = spell.attack;
@@ -80,22 +80,22 @@ public class Level2 {
                         int pres = random.nextInt(100 - 1) + 1;
                         if (pres < precision) {
                             jedusorBook.pv = jedusorBook.pv - attack;
-                            startVue.message.setText("You pulled a tooth of the basilik,\n thus destroying Jedusor's diary.");
+                            startVue.message.setText("Tu arraches une dent au basilik,\n puis tu détruis le carnet de Jedusor.");
                         } else {
                             player.pv = player.pv - basilic.attack;
-                            startVue.message.setText("You failled the spell");
+                            startVue.message.setText("Tu as raté le sort");
                         }
                     }
                 }
             }
             if (findSpell == false) {
                 player.pv = player.pv - basilic.attack;
-                startVue.message.setText("You don't know this spell");
+                startVue.message.setText("Tu ne connais pas ce sort");
             }
             if (player.pv<1){
                 player.pv=0;
             }
-            startVue.playerpv.setText("Your pv : "+player.pv);
+            startVue.playerpv.setText("Tes pv : "+player.pv);
             startVue.trollpv.setText("Basilic pv : "+basilic.pv);
             if (player.pv<1){
                 startVue.spell.setDisable(true);
@@ -111,10 +111,10 @@ public class Level2 {
         }
     }
     public void wait (ActionEvent e){
-        startVue.message.setText("nothing happen");
+        startVue.message.setText("Rien ne se passe");
         if (play==true){
             if (player.house==1) {
-                startVue.message.setText("The phoenix gives you the Sword of \nGryffindor, and you kill the basilisk.");
+                startVue.message.setText("Le phoenix te donne l'épée de \nGryffindor, et tu tues le basilisk.");
                 startVue.spell.setDisable(true);
                 startVue.fightButton.setDisable(true);
                 startVue.waitButton.setDisable(true);
@@ -128,9 +128,9 @@ public class Level2 {
     public void fight (ActionEvent e){
         if(play==true){
             player.pv = 0;
-            startVue.playerpv.setText("Your pv : "+player.pv);
+            startVue.playerpv.setText("Tes pv : "+player.pv);
             startVue.trollpv.setText("Basilic pv : "+basilic.pv);
-            startVue.message.setText("The basilik killed you");
+            startVue.message.setText("Le basilik te tue");
             if (player.pv<1){
                 startVue.spell.setDisable(true);
                 startVue.fightButton.setDisable(true);

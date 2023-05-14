@@ -14,16 +14,16 @@ import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
 
 public class VueLevel3_5 extends VBox {
-    Button beginButton = new Button("begin fight against detractor.");
-    Button spell = new Button("cast the spell");
-    TextField spellNumber = new TextField("enter the spell's number");
-    Button escapeButton = new Button("escape you");
-    Button fightButton = new Button("negociate with detractor");
+    Button beginButton = new Button("Commencer le combat contre le détraqueur.");
+    Button spell = new Button("lancer le sort");
+    TextField spellNumber = new TextField("entre le numéro du sort");
+    Button escapeButton = new Button("échappe toi");
+    Button fightButton = new Button("negocie avec le détraqueur");
 
 
     Label textetest = new Label("");
-    Label playerpv = new Label("player pv");
-    Label trollpv = new Label("Detractor pv");
+    Label playerpv = new Label("Tes pv");
+    Label trollpv = new Label("Detraqueur pv");
     Button next = new Button("next");
     Label message = new Label("");
 
